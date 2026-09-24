@@ -42,6 +42,11 @@ jobs:
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
+        with:
+          # Creates the Pages site on the first run (needs the `pages: write`
+          # permission above). Without this the job fails on a fresh repository
+          # until Pages is switched on in Settings.
+          enablement: true
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
