@@ -41,12 +41,12 @@ jobs:
           cp -r js _site/
 
       - name: Configure Pages
+        # Pages must be switched on once by hand before this workflow can publish:
+        # Settings -> Pages -> Build and deployment -> Source -> GitHub Actions.
+        # `configure-pages` is the wrong place to automate that: its `enablement`
+        # option "requires a token other than GITHUB_TOKEN to be provided", so with
+        # the default token it fails with "Resource not accessible by integration".
         uses: actions/configure-pages@v5
-        with:
-          # Creates the Pages site on the first run (needs the `pages: write`
-          # permission above). Without this the job fails on a fresh repository
-          # until Pages is switched on in Settings.
-          enablement: true
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
