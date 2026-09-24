@@ -3,6 +3,7 @@ node_modules/
 
 # Build / tooling output
 *.tsbuildinfo
+_site/
 
 # Logs
 *.log
