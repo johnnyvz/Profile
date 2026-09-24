@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Johan van Zyl — Senior Analyst Programmer</title>
+    <meta
+      name="description"
+      content="Johan van Zyl is a senior analyst programmer and multi-functional IT professional in Cape Town with 30 years in IT — modernising legacy systems and delivering robust, scalable .NET and Angular applications."
+    />
+    <meta name="author" content="Johan van Zyl" />
+    <meta name="color-scheme" content="dark light" />
+    <meta name="theme-color" content="#0a0c11" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Johan van Zyl — Senior Analyst Programmer" />
+    <meta
+      property="og:description"
+      content="Modernising legacy systems and delivering robust, scalable applications from Cape Town."
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%236ea8fe'/%3E%3Ctext x='16' y='22' font-family='system-ui,sans-serif' font-size='15' font-weight='700' text-anchor='middle' fill='%23070a10'%3EJZ%3C/text%3E%3C/svg%3E"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+
+    <!-- Apply the persisted theme before first paint to avoid a flash. -->
+    <script>
+      (function () {
+        document.documentElement.classList.add('js');
+        try {
+          var stored = localStorage.getItem('theme');
+          var prefersLight =
+            window.matchMedia &&
+            window.matchMedia('(prefers-color-scheme: light)').matches;
+          var theme = stored === 'light' || stored === 'dark'
+            ? stored
+            : prefersLight
+              ? 'light'
+              : 'dark';
+          document.documentElement.setAttribute('data-theme', theme);
+          var meta = document.querySelector('meta[name="theme-color"]');
+          if (meta) {
+            meta.setAttribute('content', theme === 'light' ? '#f6f7fb' : '#0a0c11');
+          }
+        } catch (e) {
+          /* localStorage unavailable — keep the dark default. */
+        }
+      })();
+    </script>
+  </head>
+
+  <!--
+    Contact address is stored split in these two attributes and assembled in the
+    browser by js/main.js. Keeping it out of the markup means scrapers that read the
+    HTML never see a usable address — the source has no @ sign and no mailto link.
+    The address is only ever used as a mailto target for the "Email me" buttons; it is
+    never rendered as visible text and is never copied to the clipboard.
+    To change the address, edit the two attributes below (no rebuild required).
+  -->
+  <body id="top" data-email-user="jhj.vanzyl" data-email-domain="gmail.com">
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <div class="backdrop" aria-hidden="true">
+      <div class="backdrop__grid"></div>
+      <div class="backdrop__orb backdrop__orb--a"></div>
+      <div class="backdrop__orb backdrop__orb--b"></div>
+      <div class="backdrop__vignette"></div>
+    </div>
+
+    <header class="nav" id="nav">
+      <div class="nav__inner container">
+        <a class="brand" href="#top" aria-label="Johan van Zyl — home">
+          <span class="brand__mark" aria-hidden="true">JZ</span>
+          <span class="brand__text">
+            <strong>Johan van Zyl</strong>
+            <small>Senior Analyst Programmer</small>
+          </span>
+        </a>
+
+        <button
+          class="burger"
+          id="burger"
+          type="button"
+          aria-expanded="false"
+          aria-controls="nav-links"
+          aria-label="Toggle navigation menu"
+        >
+          <span class="burger__box" aria-hidden="true">
+            <span class="burger__line"></span>
+            <span class="burger__line"></span>
+            <span class="burger__line"></span>
+          </span>
+        </button>
+
+        <nav class="nav__panel" id="nav-links" aria-label="Primary">
+          <ul class="nav__list">
+            <li><a class="nav__link" href="#about">About</a></li>
+            <li><a class="nav__link" href="#experience">Experience</a></li>
+            <li><a class="nav__link" href="#projects">Projects</a></li>
+            <li><a class="nav__link" href="#skills">Skills</a></li>
+            <li><a class="nav__link" href="#education">Education</a></li>
+            <li><a class="nav__link" href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+
+        <div class="nav__actions">
+          <button
+            class="theme-toggle"
+            id="theme-toggle"
+            type="button"
+            aria-pressed="false"
+            aria-label="Switch to light theme"
+            title="Toggle color theme"
+          >
+            <span class="theme-toggle__icon" aria-hidden="true">
+              <svg class="icon icon--sun" viewBox="0 0 24 24" width="18" height="18">
+                <circle cx="12" cy="12" r="4.2" />
+                <path
+                  d="M12 2.4v2.6M12 19v2.6M2.4 12h2.6M19 12h2.6M5.2 5.2l1.9 1.9M16.9 16.9l1.9 1.9M18.8 5.2l-1.9 1.9M7.1 16.9l-1.9 1.9"
+                />
+              </svg>
+              <svg class="icon icon--moon" viewBox="0 0 24 24" width="18" height="18">
+                <path d="M20.5 14.3A8.6 8.6 0 0 1 9.7 3.5a8.8 8.8 0 1 0 10.8 10.8Z" />
+              </svg>
+            </span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <!-- ============================= Hero ============================= -->
+      <section class="hero" id="hero" aria-labelledby="hero-title">
+        <div class="container hero__inner">
+          <p class="eyebrow" data-reveal>
+            <span class="dot" aria-hidden="true"></span>
+            City of Cape Town, South Africa · In IT since 1996
+          </p>
+
+          <h1 class="hero__title" id="hero-title" data-reveal style="--reveal-delay: 60ms">
+            Johan van Zyl — I build
+            <span class="rotator" id="rotator" aria-live="polite">modern solutions for legacy systems</span>
+          </h1>
+
+          <p class="hero__lede" data-reveal style="--reveal-delay: 120ms">
+            Multi-functional IT professional with a strong background in business process
+            reengineering, software development and programming. Known for developing modern
+            solutions that replace legacy systems, leading projects, and delivering robust,
+            scalable applications — with a passion for automation, system improvement and
+            user-focused development.
+          </p>
+
+          <div class="hero__actions" data-reveal style="--reveal-delay: 180ms">
+            <a class="btn btn--primary" href="#projects">
+              View my work
+              <svg class="icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
+                <path d="M5 12h13M13 6l6 6-6 6" />
+              </svg>
+            </a>
+            <a class="btn btn--ghost" href="#contact" data-mailto>
+              <svg class="icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
+                <rect x="3" y="5" width="18" height="14" rx="3" />
+                <path d="m4 7 8 6 8-6" />
+              </svg>
+              Email me
+            </a>
+          </div>
+
+          <dl class="stats" data-reveal style="--reveal-delay: 240ms">
+            <div class="stats__item">
+              <dt>Years in IT</dt>
+              <dd>30</dd>
+            </div>
+            <div class="stats__item">
+              <dt>Companies</dt>
+              <dd>5</dd>
+            </div>
+            <div class="stats__item">
+              <dt>Courses completed</dt>
+              <dd>40+</dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+
+      <!-- ============================= About ============================= -->
+      <section class="section" id="about" aria-labelledby="about-title">
+        <div class="container">
+          <header class="section__head" data-reveal>
+            <p class="section__kicker">01 — About</p>
+            <h2 class="section__title" id="about-title">Modern solutions to replace legacy systems</h2>
+          </header>
+
+          <div class="about">
+            <div class="about__body" data-reveal>
+              <p>
+                I am a multi-functional IT professional with a strong background in business
+                process reengineering, software development and programming. Over 30 years I
+                have moved from silo management and SAP MM business analysis into software
+                architecture — and today I spend most of my time replacing legacy systems with
+                modern, maintainable ones.
+              </p>
+              <p>
+                My strength is the whole picture: understanding the business process,
+                analysing the requirements, then designing and building the solution. I have
+                delivered in grain handling and agriculture, investment services, oncology
+                healthcare and food-service software, always with an eye on automation,
+                system improvement and the people who have to use the system every day.
+              </p>
+              <ul class="ticks">
+                <li>Software architecture &amp; development</li>
+                <li>Business analysis &amp; process automation</li>
+                <li>Microservices &amp; API development</li>
+                <li>Legacy system modernisation</li>
+                <li>Agile &amp; SDLC methodologies</li>
+                <li>Team leadership &amp; mentoring</li>
+                <li>Database management &amp; integration</li>
+              </ul>
+            </div>
+
+            <aside class="about__card card" data-reveal data-glow style="--reveal-delay: 90ms">
+              <h3 class="card__title">At a glance</h3>
+              <dl class="facts">
+                <div><dt>Based in</dt><dd>Cape Town, South Africa</dd></div>
+                <div><dt>Focus</dt><dd>Legacy modernisation · Microservices</dd></div>
+                <div><dt>Core stack</dt><dd>C# / .NET · Angular · React</dd></div>
+                <div><dt>In IT since</dt><dd>1996</dd></div>
+              </dl>
+              <p class="card__note">
+                Currently a Senior Analyst Programmer in the core team at Glacier by Sanlam,
+                maintaining the desktop applications in use today while helping build the
+                microservices that replace them.
+              </p>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========================== Experience ========================== -->
+      <section class="section" id="experience" aria-labelledby="experience-title">
+        <div class="container">
+          <header class="section__head" data-reveal>
+            <p class="section__kicker">02 — Experience</p>
+            <h2 class="section__title" id="experience-title">Three decades of shipping software</h2>
+          </header>
+
+          <ol class="timeline">
+            <li class="timeline__item" data-reveal>
+              <span class="timeline__node" aria-hidden="true"></span>
+              <article class="card timeline__card" data-glow>
+                <header class="timeline__head">
+                  <h3 class="timeline__role">Senior Analyst Programmer</h3>
+                  <p class="timeline__meta">
+                    <span class="timeline__company">Glacier by Sanlam</span>
+                    <span class="timeline__sep" aria-hidden="true">·</span>
+                    <span class="timeline__dates">May 2022 — Present</span>
+                  </p>
+                </header>
+                <p class="timeline__body">
+                  Part of the core team maintaining the desktop applications currently in use
+                  by Glacier, and helped create the microservices that all teams rely on.
+                </p>
+                <ul class="ticks ticks--compact">
+                  <li>Handled the coding and much of the planning for the annual due diligence API that checks every client annually.</li>
+                  <li>Building and maintaining microservices consumed across multiple teams.</li>
+                  <li>Maintaining the legacy desktop applications while they are replaced.</li>
+                </ul>
+                <ul class="chips" aria-label="Technologies used">
+                  <li class="chip">C# / .NET</li>
+                  <li class="chip">Microservices</li>
+                  <li class="chip">API design</li>
+                  <li class="chip">Legacy support</li>
+                </ul>
+              </article>
+            </li>
+
+            <li class="timeline__item" data-reveal style="--reveal-delay: 80ms">
+              <span class="timeline__node" aria-hidden="true"></span>
+              <article class="card timeline__card" data-glow>
+                <header class="timeline__head">
+                  <h3 class="timeline__role">Senior Software Engineer</h3>
+                  <p class="timeline__meta">
+                    <span class="timeline__company">The Gemini Solution</span>
+                    <span class="timeline__sep" aria-hidden="true">·</span>
+                    <span class="timeline__dates">Dec 2021 — Apr 2022</span>
+                  </p>
+                </header>
+                <p class="timeline__body">
+                  Worked in a South African team subcontracted to Fourth in the UK, which
+                  maintains software for some of the biggest companies in the US. I worked on
+                  the software for Chick-fil-A.
+                </p>
+                <ul class="ticks ticks--compact">
+                  <li>Rewrote the existing ASP.NET web front-end in Angular.</li>
+                </ul>
+                <ul class="chips" aria-label="Technologies used">
+                  <li class="chip">Angular</li>
+                  <li class="chip">ASP.NET</li>
+                  <li class="chip">Front-end migration</li>
+                </ul>
+              </article>
+            </li>
+
+            <li class="timeline__item" data-reveal style="--reveal-delay: 160ms">
+              <span class="timeline__node" aria-hidden="true"></span>
+              <article class="card timeline__card" data-glow>
+                <header class="timeline__head">
+                  <h3 class="timeline__role">Senior Software Developer</h3>
+                  <p class="timeline__meta">
+                    <span class="timeline__company">BKB GrainCo</span>
+                    <span class="timeline__sep" aria-hidden="true">·</span>
+                    <span class="timeline__dates">2021 — 2022</span>
+                  </p>
+                </header>
+                <p class="timeline__body">
+                  Took over from the IT manager of GrainCo to replace and support their
+                  solutions and manage the Paarl IT office, working with one remote junior
+                  developer and one support technician.
+                </p>
+                <ul class="ticks ticks--compact">
+                  <li>Rewrote legacy Magic XPA and Visual FoxPro solutions into a current architecture.</li>
+                  <li>Supported the Agris and Syspro solutions.</li>
+                  <li>Managed, motivated and trained junior developers.</li>
+                  <li>Documented solutions with flowcharts, layouts, diagrams, charts and code comments.</li>
+                </ul>
+                <ul class="chips" aria-label="Technologies used">
+                  <li class="chip">Magic XPA</li>
+                  <li class="chip">Visual FoxPro</li>
+                  <li class="chip">Syspro / Agris</li>
+                  <li class="chip">Mentoring</li>
+                </ul>
+              </article>
+            </li>
+
+            <li class="timeline__item" data-reveal style="--reveal-delay: 240ms">
+              <span class="timeline__node" aria-hidden="true"></span>
+              <article class="card timeline__card" data-glow>
+                <header class="timeline__head">
+                  <h3 class="timeline__role">Senior Software Developer</h3>
+                  <p class="timeline__meta">
+                    <span class="timeline__company">Icon Oncology</span>
+                    <span class="timeline__sep" aria-hidden="true">·</span>
+                    <span class="timeline__dates">May 2019 — Feb 2021</span>
+                  </p>
+                </header>
+                <p class="timeline__body">
+                  Development and maintenance of the software systems used by oncology clinics
+                  in South Africa, with a focus on backend performance and a new Electronic
+                  Medical Record system.
+                </p>
+                <ul class="ticks ticks--compact">
+                  <li>Assisted in the extension, maintenance and performance improvement of existing solutions.</li>
+                  <li>Helped create an Electronic Medical Record system to capture clinical data.</li>
+                  <li>Started an appointment scheduling application for oncology staff, doctors and patients.</li>
+                </ul>
+                <ul class="chips" aria-label="Technologies used">
+                  <li class="chip">C#</li>
+                  <li class="chip">ASP.NET MVC</li>
+                  <li class="chip">WCF</li>
+                  <li class="chip">IIS</li>
+                </ul>
+              </article>
+            </li>
+
+            <li class="timeline__item" data-reveal style="--reveal-delay: 320ms">
+              <span class="timeline__node" aria-hidden="true"></span>
+              <article class="card timeline__card" data-glow>
+                <header class="timeline__head">
+                  <h3 class="timeline__role">Software Developer</h3>
+                  <p class="timeline__meta">
+                    <span class="timeline__company">Senwes</span>
+                    <span class="timeline__sep" aria-hidden="true">·</span>
+                    <span class="timeline__dates">1996 — 2019</span>
+                  </p>
+                </header>
+                <p class="timeline__body">
+                  Unassisted development and maintenance of advanced software systems for the
+                  largest grain handling and storage company in Africa. My extensive experience
+                  in grain handling and control means I handle most of the business analysis in
+                  my projects, plus SAP integration and hardware instrumentation integration to
+                  very strict standards.
+                </p>
+                <ul class="ticks ticks--compact">
+                  <li>Replaced a legacy Delphi front-end covering goods receiving, dispatch, grain quality determination and management, stock determination and control, risk management and reporting.</li>
+                  <li>Developed and implemented a fumigation and hygiene control system for the legally required pest and hygiene data capturing and reporting.</li>
+                  <li>Implemented an audit solution capturing data from weighing bridges, CCTV cameras, measurement and grading instruments to prevent large losses from incorrect user data entry.</li>
+                  <li>Integrated specialised hardware instrumentation designed for grain stock control.</li>
+                  <li>Earlier roles at Senwes: Delphi Programmer (2009 — 2014), SAP MM Business Analyst (2006 — 2009), Assistant Silo Manager and silo assistant (1996 — 2006).</li>
+                </ul>
+                <ul class="chips" aria-label="Technologies used">
+                  <li class="chip">Delphi</li>
+                  <li class="chip">C# / WPF / WCF</li>
+                  <li class="chip">SAP MM</li>
+                  <li class="chip">Hardware integration</li>
+                  <li class="chip">Crystal Reports</li>
+                </ul>
+              </article>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- =========================== Projects =========================== -->
+      <section class="section" id="projects" aria-labelledby="projects-title">
+        <div class="container">
+          <header class="section__head" data-reveal>
+            <p class="section__kicker">03 — Projects</p>
+            <h2 class="section__title" id="projects-title">Selected work</h2>
+          </header>
+
+          <div class="grid grid--projects">
+            <article class="card project" data-reveal data-glow>
+              <div class="project__top">
+                <span class="project__glyph" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="20" height="20">
+                    <path d="M3 17.5 9 11l4 4 8-8.5" />
+                    <path d="M15.5 6.5H21V12" />
+                  </svg>
+                </span>
+                <span class="pill pill--accent">Current</span>
+              </div>
+              <h3 class="card__title">Annual Due Diligence API</h3>
+              <p class="project__meta">
+                <span class="project__org">Glacier by Sanlam</span> · May 2022 — Present
+              </p>
+              <p class="card__text">
+                A microservice that checks every Glacier client annually. I handled the coding
+                and much of the planning, working alongside the team that keeps the legacy
+                desktop applications running while they are replaced.
+              </p>
+              <ul class="chips">
+                <li class="chip">C# / .NET</li>
+                <li class="chip">Microservices</li>
+                <li class="chip">API design</li>
+              </ul>
+              <a class="link-arrow" href="#contact">
+                Ask me about this
+                <svg class="icon" viewBox="0 0 24 24" width="15" height="15" aria-hidden="true">
+                  <path d="M5 12h13M13 6l6 6-6 6" />
+                </svg>
+              </a>
+            </article>
+
+            <article class="card project" data-reveal data-glow style="--reveal-delay: 70ms">
+              <div class="project__top">
+                <span class="project__glyph" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="20" height="20">
+                    <rect x="3" y="3" width="7.5" height="7.5" rx="2" />
+                    <rect x="13.5" y="3" width="7.5" height="7.5" rx="2" />
+                    <rect x="3" y="13.5" width="7.5" height="7.5" rx="2" />
+                    <rect x="13.5" y="13.5" width="7.5" height="7.5" rx="2" />
+                  </svg>
+                </span>
+                <span class="pill">Agri-tech</span>
+              </div>
+              <h3 class="card__title">Grain Stock Control &amp; Risk Platform</h3>
+              <p class="project__meta">
+                <span class="project__org">Senwes</span> · Delivered at Africa's largest grain
+                handler
+              </p>
+              <p class="card__text">
+                Replacement for an outdated Delphi front-end covering goods receiving,
+                dispatch, grain quality determination and management, stock determination and
+                control, risk management and reporting.
+              </p>
+              <ul class="chips">
+                <li class="chip">Delphi</li>
+                <li class="chip">C#</li>
+                <li class="chip">SQL</li>
+                <li class="chip">SAP integration</li>
+              </ul>
+              <a class="link-arrow" href="#contact">
+                Ask me about this
+                <svg class="icon" viewBox="0 0 24 24" width="15" height="15" aria-hidden="true">
+                  <path d="M5 12h13M13 6l6 6-6 6" />
+                </svg>
+              </a>
+            </article>
+
+            <article class="card project" data-reveal data-glow style="--reveal-delay: 140ms">
+              <div class="project__top">
+                <span class="project__glyph" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="20" height="20">
+                    <path d="M12 3.2 5 6v5.4c0 4.1 2.9 7.6 7 8.9 4.1-1.3 7-4.8 7-8.9V6Z" />
+                    <path d="m9 12 2.2 2.2L15.5 10" />
+                  </svg>
+                </span>
+                <span class="pill">Compliance</span>
+              </div>
+              <h3 class="card__title">Compliance &amp; Audit Solutions</h3>
+              <p class="project__meta">
+                <span class="project__org">Senwes</span> · Fumigation, hygiene and stock audits
+              </p>
+              <p class="card__text">
+                A fumigation and hygiene control system delivering the data capturing and
+                reporting required by law for pest and hygiene control, plus an audit solution
+                that captures weighbridge, CCTV, measurement and grading data to prevent large
+                losses caused by incorrect manual entry.
+              </p>
+              <ul class="chips">
+                <li class="chip">C#</li>
+                <li class="chip">Instrumentation integration</li>
+                <li class="chip">Crystal Reports</li>
+              </ul>
+              <a class="link-arrow" href="#contact">
+                Ask me about this
+                <svg class="icon" viewBox="0 0 24 24" width="15" height="15" aria-hidden="true">
+                  <path d="M5 12h13M13 6l6 6-6 6" />
+                </svg>
+              </a>
+            </article>
+
+            <article class="card project" data-reveal data-glow style="--reveal-delay: 210ms">
+              <div class="project__top">
+                <span class="project__glyph" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="20" height="20">
+                    <circle cx="12" cy="12" r="8.5" />
+                    <path d="M3.5 12h17M12 3.5c2.4 2.6 2.4 14.4 0 17M12 3.5c-2.4 2.6-2.4 14.4 0 17" />
+                  </svg>
+                </span>
+                <span class="pill pill--accent">Front-end</span>
+              </div>
+              <h3 class="card__title">Chick-fil-A Web Front-End Rewrite</h3>
+              <p class="project__meta">
+                <span class="project__org">The Gemini Solution</span> · for Fourth, UK
+              </p>
+              <p class="card__text">
+                Part of the rewrite of the ASP.NET web front-end to Angular for Chick-fil-A,
+                delivered from a South African team subcontracted to Fourth — the company that
+                maintains software for some of the biggest companies in the US.
+              </p>
+              <ul class="chips">
+                <li class="chip">Angular</li>
+                <li class="chip">ASP.NET</li>
+                <li class="chip">TypeScript</li>
+              </ul>
+              <a class="link-arrow" href="#contact">
+                Ask me about this
+                <svg class="icon" viewBox="0 0 24 24" width="15" height="15" aria-hidden="true">
+                  <path d="M5 12h13M13 6l6 6-6 6" />
+                </svg>
+              </a>
+            </article>
+
+            <article class="card project" data-reveal data-glow style="--reveal-delay: 280ms">
+              <div class="project__top">
+                <span class="project__glyph" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="20" height="20">
+                    <path d="M14 3H7.5A2.5 2.5 0 0 0 5 5.5v13A2.5 2.5 0 0 0 7.5 21h9a2.5 2.5 0 0 0 2.5-2.5V8Z" />
+                    <path d="M13.5 3v5H19" />
+                  </svg>
+                </span>
+                <span class="pill">Healthcare</span>
+              </div>
+              <h3 class="card__title">Electronic Medical Records &amp; Scheduling</h3>
+              <p class="project__meta">
+                <span class="project__org">Icon Oncology</span> · May 2019 — Feb 2021
+              </p>
+              <p class="card__text">
+                An Electronic Medical Record system to capture clinical data for oncology
+                clinics in South Africa, plus an appointment scheduling application for
+                oncology staff, doctors and patients.
+              </p>
+              <ul class="chips">
+                <li class="chip">C#</li>
+                <li class="chip">ASP.NET MVC</li>
+                <li class="chip">WCF</li>
+                <li class="chip">Backend</li>
+              </ul>
+              <a class="link-arrow" href="#contact">
+                Ask me about this
+                <svg class="icon" viewBox="0 0 24 24" width="15" height="15" aria-hidden="true">
+                  <path d="M5 12h13M13 6l6 6-6 6" />
+                </svg>
+              </a>
+            </article>
+
+            <article class="card project" data-reveal data-glow style="--reveal-delay: 350ms">
+              <div class="project__top">
+                <span class="project__glyph" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="20" height="20">
+                    <path d="M20.5 12a8.5 8.5 0 1 1-2.6-6.1" />
+                    <path d="M18.5 3v4.4h-4.4" />
+                  </svg>
+                </span>
+                <span class="pill">Modernisation</span>
+              </div>
+              <h3 class="card__title">Legacy System Replacement</h3>
+              <p class="project__meta">
+                <span class="project__org">BKB GrainCo</span> · Magic XPA &amp; Visual FoxPro
+              </p>
+              <p class="card__text">
+                Led two large projects to completely rewrite outdated Magic XPA and Visual
+                FoxPro solutions into a current architecture, while supporting the Agris and
+                Syspro systems and mentoring a remote junior developer.
+              </p>
+              <ul class="chips">
+                <li class="chip">Magic XPA</li>
+                <li class="chip">Visual FoxPro</li>
+                <li class="chip">Syspro / Agris</li>
+              </ul>
+              <a class="link-arrow" href="#contact">
+                Ask me about this
+                <svg class="icon" viewBox="0 0 24 24" width="15" height="15" aria-hidden="true">
+                  <path d="M5 12h13M13 6l6 6-6 6" />
+                </svg>
+              </a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================ Skills ============================ -->
+      <section class="section" id="skills" aria-labelledby="skills-title">
+        <div class="container">
+          <header class="section__head" data-reveal>
+            <p class="section__kicker">04 — Skills</p>
+            <h2 class="section__title" id="skills-title">The toolkit and the business skills</h2>
+          </header>
+
+          <div class="grid grid--skills">
+            <section class="card skill-group" data-reveal data-glow aria-labelledby="skills-languages">
+              <h3 class="card__title" id="skills-languages">Languages &amp; frameworks</h3>
+              <ul class="chips">
+                <li class="chip">C#</li>
+                <li class="chip">.NET</li>
+                <li class="chip">.NET Core</li>
+                <li class="chip">ASP.NET (MVC / Web API)</li>
+                <li class="chip">Angular</li>
+                <li class="chip">React</li>
+                <li class="chip">Blazor</li>
+                <li class="chip">TypeScript</li>
+                <li class="chip">JavaScript</li>
+                <li class="chip">LINQ</li>
+                <li class="chip">WCF</li>
+                <li class="chip">XAML</li>
+                <li class="chip">WPF</li>
+                <li class="chip">VBScript</li>
+                <li class="chip">Delphi</li>
+                <li class="chip">SQL</li>
+                <li class="chip">SQLite</li>
+                <li class="chip">JSON</li>
+                <li class="chip">HTML</li>
+                <li class="chip">CSS</li>
+              </ul>
+            </section>
+
+            <section class="card skill-group" data-reveal data-glow style="--reveal-delay: 70ms" aria-labelledby="skills-tools">
+              <h3 class="card__title" id="skills-tools">Tools &amp; technologies</h3>
+              <ul class="chips">
+                <li class="chip">Entity Framework</li>
+                <li class="chip">ADO.NET</li>
+                <li class="chip">Redis</li>
+                <li class="chip">Swagger</li>
+                <li class="chip">Git</li>
+                <li class="chip">TFS</li>
+                <li class="chip">Azure DevOps</li>
+                <li class="chip">SSMS</li>
+                <li class="chip">Microsoft IIS</li>
+                <li class="chip">SAP MM</li>
+                <li class="chip">Crystal Reports</li>
+                <li class="chip">Visual Studio</li>
+                <li class="chip">VS Code</li>
+                <li class="chip">TortoiseSVN</li>
+                <li class="chip">Unix</li>
+              </ul>
+            </section>
+
+            <section class="card skill-group" data-reveal data-glow style="--reveal-delay: 140ms" aria-labelledby="skills-architecture">
+              <h3 class="card__title" id="skills-architecture">Architecture &amp; design</h3>
+              <ul class="chips">
+                <li class="chip">Microservices</li>
+                <li class="chip">Clean Architecture</li>
+                <li class="chip">Domain-Driven Design</li>
+                <li class="chip">CQRS</li>
+                <li class="chip">RESTful API design</li>
+                <li class="chip">SOAP</li>
+                <li class="chip">Ocelot</li>
+                <li class="chip">MediatR</li>
+                <li class="chip">Scrutor</li>
+                <li class="chip">CI/CD</li>
+              </ul>
+            </section>
+
+            <section class="card skill-group" data-reveal data-glow style="--reveal-delay: 210ms" aria-labelledby="skills-business">
+              <h3 class="card__title" id="skills-business">Business &amp; leadership</h3>
+              <p class="chips__label">Core competencies</p>
+              <ul class="chips">
+                <li class="chip">Software architecture &amp; development</li>
+                <li class="chip">Business analysis &amp; process automation</li>
+                <li class="chip">Microservices &amp; API development</li>
+                <li class="chip">Legacy system modernisation</li>
+                <li class="chip">Agile &amp; SDLC methodologies</li>
+                <li class="chip">Team leadership &amp; mentoring</li>
+                <li class="chip">Database management &amp; integration</li>
+                <li class="chip">SAP MM business analysis &amp; config</li>
+              </ul>
+              <p class="chips__label">Soft skills</p>
+              <ul class="chips">
+                <li class="chip">Analytical &amp; detail-oriented</li>
+                <li class="chip">Self-directed &amp; accountable</li>
+                <li class="chip">Strong interpersonal communication</li>
+                <li class="chip">Planning &amp; time management</li>
+                <li class="chip">Goal-oriented &amp; results-focused</li>
+                <li class="chip">Collaborative &amp; approachable</li>
+              </ul>
+            </section>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========================== Education ========================== -->
+      <section class="section" id="education" aria-labelledby="education-title">
+        <div class="container">
+          <header class="section__head" data-reveal>
+            <p class="section__kicker">05 — Education</p>
+            <h2 class="section__title" id="education-title">Education &amp; certifications</h2>
+          </header>
+
+          <div class="card edu" data-reveal data-glow>
+            <div class="edu__intro">
+              <h3 class="card__title">40+ courses completed, and still learning</h3>
+              <p class="card__text">
+                Matric at Bothaville High School and formal C# training at Incus Data got me
+                started; everything since has been self-driven study through Pluralsight and
+                Udemy. The newest additions — Blazor, AWS, GitHub and AI-assisted development
+                — are the tinted chips. Hover any chip to hold it still.
+              </p>
+            </div>
+
+            <ul class="cloud" aria-label="Courses completed">
+              <li class="cloud__chip cloud__chip--recent">Blazor</li>
+              <li class="cloud__chip">Advanced C#</li>
+              <li class="cloud__chip">React</li>
+              <li class="cloud__chip cloud__chip--recent">AWS</li>
+              <li class="cloud__chip">LINQ</li>
+              <li class="cloud__chip">WPF</li>
+              <li class="cloud__chip">Microservices</li>
+              <li class="cloud__chip cloud__chip--recent">GitHub</li>
+              <li class="cloud__chip">Async programming</li>
+              <li class="cloud__chip">XAML</li>
+              <li class="cloud__chip">CQRS</li>
+              <li class="cloud__chip cloud__chip--recent">AI-assisted development</li>
+              <li class="cloud__chip">MVVM</li>
+              <li class="cloud__chip">Angular</li>
+              <li class="cloud__chip">Defensive coding</li>
+              <li class="cloud__chip">.NET Core</li>
+              <li class="cloud__chip">UWP</li>
+              <li class="cloud__chip">C# internals</li>
+              <li class="cloud__chip">JavaScript</li>
+              <li class="cloud__chip">Clean Architecture</li>
+              <li class="cloud__chip">Delegates &amp; lambdas</li>
+              <li class="cloud__chip">CSS</li>
+              <li class="cloud__chip">HTML</li>
+              <li class="cloud__chip cloud__chip--more">&hellip;and many more</li>
+            </ul>
+
+            <p class="card__note">
+              Formal qualifications: Matric (Bothaville High School) &middot; C# programming
+              and advanced C# (Incus Data).
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- =========================== Contact =========================== -->
+      <section class="section section--contact" id="contact" aria-labelledby="contact-title">
+        <div class="container">
+          <div class="card contact" data-reveal data-glow>
+            <div class="contact__body">
+              <p class="section__kicker">06 — Contact</p>
+              <h2 class="section__title" id="contact-title">Let's modernise something</h2>
+              <p class="card__text">
+                Based in the City of Cape Town and always happy to talk about legacy
+                modernisation, microservices, business analysis or team leadership. LinkedIn
+                is the simplest way to reach me — or use the email button to open your own
+                mail client.
+              </p>
+
+              <noscript>
+                <p class="card__note">
+                  JavaScript is switched off, so the email button cannot be prepared — the
+                  address is assembled in the browser rather than published in the page.
+                  Please use the LinkedIn button instead.
+                </p>
+              </noscript>
+            </div>
+
+            <div class="contact__actions">
+              <a
+                class="btn btn--primary"
+                href="https://www.linkedin.com/in/jvzct"
+                rel="me noopener noreferrer"
+                target="_blank"
+              >
+                <svg class="icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
+                  <path d="M14 4h6v6" />
+                  <path d="M20 4 10.5 13.5" />
+                  <path d="M18 14.5V18a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h3.5" />
+                </svg>
+                Connect on LinkedIn
+              </a>
+              <a class="btn btn--ghost" href="#contact" data-mailto>
+                <svg class="icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
+                  <rect x="3" y="5" width="18" height="14" rx="3" />
+                  <path d="m4 7 8 6 8-6" />
+                </svg>
+                Email me
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer__inner">
+        <p class="footer__copy">
+          © <span id="year">2026</span> Johan van Zyl. Built by hand with HTML, CSS &amp;
+          TypeScript.
+        </p>
+        <a class="footer__top" href="#top">
+          Back to top
+          <svg class="icon" viewBox="0 0 24 24" width="14" height="14" aria-hidden="true">
+            <path d="M12 19V6M6 12l6-6 6 6" />
+          </svg>
+        </a>
+      </div>
+    </footer>
+
+    <script type="module" src="js/main.js"></script>
+  </body>
+</html>

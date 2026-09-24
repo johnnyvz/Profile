@@ -1,0 +1,26 @@
+# Dependencies
+node_modules/
+
+# Build / tooling output
+*.tsbuildinfo
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Editor & OS
+.vscode/*
+!.vscode/settings.json
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Env
+.env
+.env.local
+
+# NOTE: `js/` is intentionally committed so GitHub Pages works
+# without a CI build step.
